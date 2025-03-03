@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu des Allumettes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game">
+        <div class="matchbox">
+            <div class="matches-container"></div>
+        </div>
+        <div class="pack">
+        </div>
+        <div class="player">
+            Joueur 1 joue
+        </div>
+        <div class="input">
+            <label for="matches">Allumettes à retirer</label>
+            <input type="number" name="matches" id="matches" min="1" max="6" />
+            <input type="submit" id="submit" />
+        </div>
+    </div>
+    <div class="message">
+    </div>
+    <script defer src="./script.js"></script>
+</body>
+
+</html>
