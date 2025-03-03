@@ -1,4 +1,4 @@
-import { latinToMorse, morseToLatin } from "../dictionnaire.js";
+import { latinToMorse, morseToLatin } from "./dictionnaire.js";
 
 const getLatinCharacterList = (string) => {
     let res = [];
