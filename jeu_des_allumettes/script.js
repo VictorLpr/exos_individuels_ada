@@ -3,13 +3,16 @@ const matches = document.getElementById("matches");
 const packLeft = document.querySelector(".pack");
 const message = document.querySelector(".message");
 const playerActiv = document.querySelector(".player")
-const game = document.querySelector(".game")
+const game = document.querySelector(".game");
 const matchesContainer = document.querySelector(".matches-container");
+const start = document.getElementById("start");
+const welcome = document.querySelector(".welcome")
+const playerNumber = document.getElementById("player-number")
 
 let pack = 50;
 let maxPulled = 6;
 let player = 1;
-let playerMax = window.prompt("combien de joueurs ?");
+let playerMax;
 
 function initializeMatches() {
     matchesContainer.innerHTML = ""; 
@@ -61,7 +64,13 @@ function pullFromPack (pulled) {
     nextPlayer();
 }
 
+start.addEventListener("click", () => {
+    playerMax = playerNumber.value;
+    game.style.display = "block";
+    welcome.style.display = "none";
 
+
+})
 
 submit.addEventListener("click", () => {
     if (matches.value > maxPulled || matches.value < 1) {

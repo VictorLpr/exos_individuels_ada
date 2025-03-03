@@ -32,3 +32,6 @@
 .fade-out {
     animation: fadeOut 0.3s forwards;
 }
+.game {
+    display: none;
+}
