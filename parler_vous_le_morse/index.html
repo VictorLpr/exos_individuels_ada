@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parlez vous le Morse</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="script.js" type="module" defer></script>
 </head>
 <body>
     <div class="main">
@@ -15,7 +15,8 @@
             <textarea  name="latin" id="latin"></textarea>
         </div>
         <div class="valid">
-            <button type="submit" id="translate">Traduire</button>
+            <button type="submit" id="translateLatin">Traduire en Morse</button>
+            <button type="submit" id="translateMorse">Traduire en Latin</button>
         </div>
         <div class="morse">
             <label for="morse">Morse</label>

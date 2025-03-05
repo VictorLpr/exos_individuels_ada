@@ -1,6 +1,9 @@
 body {
     background-color: #D8D4F2;
     color: #332E3C;
+    background-image: url(Clef1_Mors.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .main {
@@ -14,11 +17,11 @@ body {
 #latin,
 #morse {
     width: 80%;
-    height: 200px;
+    height: 400px;
     resize: none;
     border-radius: 10px;
     color: #332E3C;
-    background-color: #C4B2BC;
+    background-color: #c4b2bcb5;
 }
 
 .latin,
@@ -27,14 +30,29 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
-#translate {
+#translateLatin,
+#translateMorse {
     background-color: #846C5B;
     border-radius: 5px;
     /* border: none; */
 }
 
-#translate:hover {
+#translateLatin:hover
+#translateMorse:hover {
     transform: translateY(-3px);
+}
+
+.valid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 300px;
+    width: 20%;
+}
+
+label {
+    font-size: 2rem;
 }

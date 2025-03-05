@@ -1,67 +1,11 @@
-// import { latinToMorse, morseToLatin } from "./dictionnaire.js";
+import { latinToMorse, morseToLatin } from "./dictionnaire.js";
 
 const morse = document.querySelector("#morse")
 const latin = document.querySelector("#latin")
-const submit = document.querySelector("#translate")
-const latinToMorse = {
-	'A':'.-',
-	'B':'-...',
-	'C':'-.-.',
-	'D':'-..',
-	'E':'.',
-	'F':'..-.',
-	'G':'--.',
-	'H':'....',
-	'I':'..',
-	'J':'.---',
-	'K':'-.-',
-	'L':'.-..',
-	'M':'--',
-	'N':'-.',
-	'O':'---',
-	'P':'.--.',
-	'Q':'--.-',
-	'R':'.-.',
-	'S':'...',
-	'T':'-',
-	'U':'..-',
-	'V':'...-',
-	'W':'.--',
-	'X':'-..-',
-	'Y':'-.--',
-	'Z':'--..',
-    ' ':'/'
-}
+const submitLatin = document.querySelector("#translateLatin")
+const submitMorse = document.querySelector("#translateMorse")
 
-const morseToLatin = {
-    '-': "T",
-    '--': "M",
-    '---': "O",
-    '--.': "G",
-    '--.-': "Q",
-    '--..': "Z",
-    '-.': "N",
-    '-.-': "K",
-    '-.--': "Y",
-    '-.-.': "C",
-    '-..': "D",
-    '-..-': "X",
-    '-...': "B",
-    '.': "E",
-    '.-': "A",
-    '.--': "W",
-    '.---': "J",
-    '.--.': "P",
-    '.-.': "R",
-    '.-..': "L",
-    '..': "I",
-    '..-': "U",
-    '..-.': "F",
-    '...': "S",
-    '...-': "V",
-    '....': "H",
-    '/': ' '
-  }
+
 
 
 const getLatinCharacterList = (string) => {
@@ -73,7 +17,8 @@ const getLatinCharacterList = (string) => {
 }
 
 const translateLatinCharacter = (char) => {
-    return latinToMorse[char];
+    if (char == `'`) return ('.----.');
+    else return latinToMorse[char];
 }
 
 const encode = (string) => {
@@ -114,10 +59,18 @@ const decode = (string) => {
     return res;
 }
 
-submit.addEventListener("click", () => {
+submitLatin.addEventListener("click", () => {
     if (latin.value) {
         morse.value = encode(latin.value)
-    } else if (morse.value) {
+    } else {
+        latin.focus();
+    }
+})
+
+submitMorse.addEventListener("click", () => {
+    if (morse.value) {
         latin.value = decode(morse.value)
+    } else {
+        morse.focus();
     }
 })
