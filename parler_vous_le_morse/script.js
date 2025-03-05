@@ -31,19 +31,21 @@ const encode = (string) => {
     return res;
 }
 
+// const getMorseCharacterList = (string) => {
+//     let res = [];
+//     for (let i = 0; i < string.length; i++) {
+//         let letter = "";
+//         for (let j = i ; string[j] != " " && j < string.length; j++) {
+//             letter += string[j];
+//             i = j;
+//         }
+//         if (letter != "") res.push(letter);
+//     }
+//     return res;
+// }
 const getMorseCharacterList = (string) => {
-    let res = [];
-    for (let i = 0; i < string.length; i++) {
-        let letter = "";
-        for (let j = i ; string[j] != " " && j < string.length; j++) {
-            letter += string[j];
-            i = j;
-        }
-        if (letter != "") res.push(letter);
-    }
-    return res;
+    return string.split(" ");
 }
-
 
 const translateMorseCharacter = (char) => {
     return morseToLatin[char];
@@ -53,12 +55,16 @@ const decode = (string) => {
     let array = getMorseCharacterList(string);
     let res = "";
     for (let i = 0; i < array.length; i++) {
-        if (i == 0) res += translateMorseCharacter(array[i]);
-        else res += translateMorseCharacter(array[i]).toLowerCase();
+        if (i == 0) {
+            res += translateMorseCharacter(array[i]);
+        } else if (array[i] == "") {
+            continue;
+        } else {
+            res += translateMorseCharacter(array[i]).toLowerCase();
+        }
     }
     return res;
 }
-
 submitLatin.addEventListener("click", () => {
     if (latin.value) {
         morse.value = encode(latin.value)

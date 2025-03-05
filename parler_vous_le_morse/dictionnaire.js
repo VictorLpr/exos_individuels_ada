@@ -30,7 +30,7 @@ export let latinToMorse = {
     'É' : '..-..',
     'Ô' : '---.',
     'Ê' : '-..-.',
-    'Ï' : '-..--',
+    'Ï' : '-..--'
 }
 
 export let morseToLatin = {
