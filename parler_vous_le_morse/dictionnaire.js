@@ -25,7 +25,7 @@ export const latinToMorse = {
 	'X':'-..-',
 	'Y':'-.--',
 	'Z':'--..',
-    ' ':' '
+    ' ':'/'
 }
 
 export const morseToLatin = {
@@ -54,5 +54,6 @@ export const morseToLatin = {
     '..-.': "F",
     '...': "S",
     '...-': "V",
-    '....': "H"
+    '....': "H",
+    '/': ' '
   }
