@@ -4,6 +4,15 @@ body {
     background-image: url(Clef1_Mors.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .main {
@@ -22,6 +31,7 @@ body {
     border-radius: 10px;
     color: #332E3C;
     background-color: #c4b2bcb5;
+    text-align: left;
 }
 
 .latin,

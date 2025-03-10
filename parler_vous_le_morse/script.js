@@ -5,13 +5,17 @@ const latin = document.querySelector("#latin")
 const submitLatin = document.querySelector("#translateLatin")
 const submitMorse = document.querySelector("#translateMorse")
 
+let ignore = [";",".",",","!","?",":"];
 
 
 
 const getLatinCharacterList = (string) => {
     let res = [];
     for (const letter of string) {
-        res.push(letter)
+        if (!(ignore.includes(letter))) {
+            res.push(letter);
+        } 
+            
     }
     return res;
 }
@@ -26,23 +30,11 @@ const encode = (string) => {
     let res = "";
     for (let i = 0; i < array.length; i++) {
         res += translateLatinCharacter(array[i].toUpperCase());
-        res += " "
+        res += " ";
     }
     return res;
 }
 
-// const getMorseCharacterList = (string) => {
-//     let res = [];
-//     for (let i = 0; i < string.length; i++) {
-//         let letter = "";
-//         for (let j = i ; string[j] != " " && j < string.length; j++) {
-//             letter += string[j];
-//             i = j;
-//         }
-//         if (letter != "") res.push(letter);
-//     }
-//     return res;
-// }
 const getMorseCharacterList = (string) => {
     return string.split(" ");
 }
