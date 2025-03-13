@@ -72,10 +72,10 @@ function isDatePalindrome(date) {
     }
 }
 
-
+console.log(isPalindrome("kayak"))
 console.log(isDatePalindrome("22/12/2222"))
 console.log(isDatePalindrome("30/02/2003"))
 console.log(isDatePalindrome("22/12/2122"))
 
 // console.log(isPalindrome(date.toLocaleDateString()))
-getNextPalindromes(10)
+getNextPalindromes(10);
