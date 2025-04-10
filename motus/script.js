@@ -1,5 +1,5 @@
-function tryWord(word, base) {
-    // TODO: fix jeu sensible à la casse.
+export function tryWord(word, base) {
+    word = word.toLowerCase()
     if (word === base) {
         return true
     } else {
@@ -26,7 +26,7 @@ function tryWord(word, base) {
 function guess() {
     let base = 'dictionnaire'
     let wordInput = document.getElementById("word")
-    let word = wordInput.value.toLowerCase()
+    let word = wordInput.value
     let result = tryWord(word, base)
 
     console.log(result)
