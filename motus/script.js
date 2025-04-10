@@ -23,7 +23,7 @@ export function tryWord(word, base) {
     }
 }
 
-function guess() {
+export function guess() {
     let base = 'dictionnaire'
     let wordInput = document.getElementById("word")
     let word = wordInput.value
@@ -39,3 +39,5 @@ function guess() {
     document.getElementById("miss").innerText = result.missplaced ? `Mal placé: ${result.missplaced.join(', ')}` : ""
     document.getElementById("not").innerText = result.notInWord ? `Pas dans le mot: ${result.notInWord.join(', ')}` : ""
 }
+
+document.querySelector("button").addEventListener("click", guess)
