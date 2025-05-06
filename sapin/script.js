@@ -60,11 +60,14 @@ const afficherEtage = (hauteur, pointe_offset, espacement) => {
 
 
  const afficherSapin = (etages, hauteur_etage) => {
-    
+    for (let i = 0; i < etages; i++) {
+        afficherEtage(hauteur_etage,i,hauteur_etage-i)
+    }
  }
 // afficherPointeSapin(4)
 
-afficherEtage(3, 0, 3)
-afficherEtage(3, 1, 2)
-afficherEtage(3, 2, 1)
-afficherEtage(3, 3, 0)
+// afficherEtage(3, 0, 3)
+// afficherEtage(3, 1, 2)
+// afficherEtage(3, 2, 1)
+// afficherEtage(3, 3, 0)
+afficherSapin(4,3)
