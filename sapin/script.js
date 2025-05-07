@@ -41,8 +41,8 @@ const decoration = () => {
 }
 
 const afficherEtage = (hauteur, pointe_offset, espacement) => {
+    let line = ""
     for (let i = 1; i <= hauteur; i++) {
-        let line = ""
         let deco = false
         for (let j = 1 - espacement; j < hauteur - i; j++) {
             line += ' '
@@ -67,10 +67,10 @@ const afficherEtage = (hauteur, pointe_offset, espacement) => {
                 deco = false
             }
         }
-        line += `\\`
+        line += `\\ \n`
 
-        console.log(line)
     }
+    return line
 
 }
 
@@ -83,31 +83,35 @@ const afficherEtoile = (etages, hauteur_etage) => {
             line += " "
         }
     }
-    console.log(line)
+    line += '\n'
+    return line
 }
 
 const afficherTronc = (etages, hauteur_etage) => {
     let trunkSize = (hauteur_etage) % 2 == 0 ? hauteur_etage - 1 : hauteur_etage;
     let offset = etages + hauteur_etage - Math.ceil(trunkSize / 2);
+    let line = "";
     for (let i = 1; i <= etages; i++ ) {
-        let line = "";
         for (let j = 0; j < offset; j++) {
             line += " "
         }
         for (let j = 0; j < trunkSize; j++) {
             line += "#"
         }
-        console.log(line)
+        line += '\n'
     }
+    return(line)
 }
 
 
 const afficherSapin = (etages, hauteur_etage) => {
-    afficherEtoile(etages, hauteur_etage)
+    let result = ""
+    result += afficherEtoile(etages, hauteur_etage)
     for (let i = 0; i < etages; i++) {
-        afficherEtage(hauteur_etage, i, etages - i)
+         result += afficherEtage(hauteur_etage, i, etages - i)
     }
-    afficherTronc(etages, hauteur_etage)
+    result += afficherTronc(etages, hauteur_etage)
+    console.log(result)
 }
 
-afficherSapin(8, 3)
+afficherSapin(6, 3)
